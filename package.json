@@ -1,0 +1,23 @@
+{
+  "name": "731-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/clyderemp/731-project.git"
+  },
+  "keywords": [
+    "731project"
+  ],
+  "author": "Clyde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/clyderemp/731-project/issues"
+  },
+  "homepage": "https://gitlab.com/clyderemp/731-project#readme"
+}

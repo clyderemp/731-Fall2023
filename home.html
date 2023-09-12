@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>731 Project</title>
+
+    <!-- CSS only -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--FIREBASE Scripts-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <section class="text-center pt-5 pb-lg-5">
+        <h4>
+            Welcome <span id="fullName">FullName</span> - <span id="studentNum">Student Number</span><br>
+            <p class="fs-5">Current Average: <span id="currentAve">0</span><br><span id="output"></span></p><br>
+        </h4>
+        <button class="w-auto m-2" id="logout-btn">Log out</button>
+    </section>
+    <section class="text-center">
+        <button class="btn-primary w-auto m-2" id="add">Add Courses</button>
+        <button class="btn-primary w-auto m-2" id="remove">Remove Courses</button>
+        <button class="btn-primary w-auto m-2" id="calculate">Calculate Goal Average</button>
+    </section>
+    <!--THIS IS WHERE WE ADD THE COURSE CODE-->
+    <div class="text-center m-auto" id="courseAdder">
+      <form class="form-control text-center mt-5" style="width: 50%;margin-left: 25%;">
+        <label for="coursecode"><b>Add a Course Code</b></label>
+        <input id="courseCode1" type="text" placeholder="Enter Course Code to be added" name="coursecode" required><br>
+        <input id="courseAve" type="text" placeholder="Enter Course Average to be added" name="courseAve" required><br>
+        <input class="btn-primary" type="button" value="Submit" id="addCourseBtn">
+      </form>
+    </div>
+    <!--THIS IS WHERE WE REMOVE THE COURSE CODE-->
+    <div class="text-center m-auto" id="courseRemover">
+      <form class="form-control text-center mt-5" style="width: 50%;margin-left: 25%;">
+        <label for="coursecode"><b>Remove a Course Code</b></label>
+        <input id="courseCode2" type="text" placeholder="Enter Course Code to be removed" name="coursecode" required><br>
+        <input class="btn-primary" type="button" value="Submit" id="removeCourseBtn">
+      </form>
+    </div>
+    <!--THIS IS WHERE WE REMOVE THE COURSE CODE-->
+    <div class="text-center m-auto mb-3" id="goalCalculator">
+      <form class="form-control text-center mt-5" style="width: 50%;margin-left: 25%;">
+        <label for="goalInput"><b>Enter Goal Average</b></label>
+        <input class="input-group" id="goalInput" type="number" placeholder="Enter your goal average" name="goalCalc" required><br>
+        <input class="input-group" id="numOfcourses" type="number" placeholder="# of courses" name="goalCalc" required><br>
+        <input class="btn-primary mt-3" type="button" value="Calculate" id="goalCalc-btn">
+      </form>
+    </div>
+
+    <!--TABLE SECTION-->
+    <div class="table-bordered pt-lg-5 text-center mt-4 pb-5">
+      <table style="width:90%; margin-left: 5%;" id="courseTable">
+        <tr class="card-header fw-bold ">
+          <td>Course Name</td>
+          <td>Average</td>
+          <td>Letter Grade</td>
+        </tr>
+      </table>
+    </div>
+</body>
+</html>
